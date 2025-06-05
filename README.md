@@ -12,7 +12,7 @@ Com Docker e Docker Compose instalados, basta clonar o projeto e executá-lo com
 
 ```bash
 git clone https://github.com/guizaosdev/devopsp5.git
-cd pp-projeto
+cd projetodevops
 cp .env.example .env
 docker-compose up --build
 ```
