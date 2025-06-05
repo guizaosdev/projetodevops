@@ -8,11 +8,12 @@ Desenvolvido por **Guilherme Ramos**, estudante do 5º período do curso **Siste
 
 ## 🐳 Execução com Docker Compose
 
-Com Docker e Docker Compose instalados, basta clonar o projeto e executá-lo com os comandos abaixo:
+Com Docker e Docker Compose instalados, basta clonar o projeto e executá-lo com os comandos abaixo (para preservar as credenciais do `.env`, copie o arquivo `.env.example` para que o projeto funcione):
 
 ```bash
 git clone https://github.com/guizaosdev/devopsp5.git
 cd pp-projeto
+cp .env.example .env
 docker-compose up --build
 ```
 
