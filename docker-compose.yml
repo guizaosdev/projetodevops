@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./pp-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGO_URI=mongodb://${DB_USER}:${DB_PASS}@mongo:27017/${DB_NAME}?authSource=admin
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_CLUSTER=${DB_CLUSTER}
+      - DB_NAME=${DB_NAME}
+      - DB_SECRET=${DB_SECRET}
+      
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./pp-react/pp-arquivos
+    ports:
+      - "3000:80"
+
+  mongo:
+    image: mongo:6
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+    ports:
+      - "27017:27017"
